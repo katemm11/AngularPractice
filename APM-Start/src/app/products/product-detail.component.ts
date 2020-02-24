@@ -23,11 +23,8 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit(): void {
     let id = +this.route.snapshot.paramMap.get("id");
-    this.productService.getProducts().subscribe({
-      next: products => {
-        let thisProduct = products.filter(product => product.productId == id);
-        this.product = thisProduct[0];
-      },
+    this.productService.getProduct(id).subscribe({
+      next: product => (this.product = product),
       error: err => (this.errorMessage = err)
     });
   }
