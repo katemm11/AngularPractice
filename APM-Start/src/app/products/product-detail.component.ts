@@ -12,7 +12,7 @@ export class ProductDetailComponent implements OnInit {
   pageTitle: string = "Product Detail";
   product: IProduct;
   errorMessage: string;
-  imageWidth: number = 50;
+  imageWidth: number = 75;
   imageMargin: number = 2;
 
   constructor(

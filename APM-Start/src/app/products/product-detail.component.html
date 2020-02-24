@@ -1,44 +1,47 @@
-<div class="card" *ngIf="product">
+<div class="card"
+*ngIf="product">
   <div class="card-header">
     {{ pageTitle + ": " + product.productName }}
   </div>
+
+  
   <div class="table">
     <tr>
       Name:
       {{
-        this.product.productName
+        product.productName
       }}
     </tr>
     <tr>
       Code:
       {{
-        this.product.productCode | lowercase | convertToSpaces: "-"
+        product.productCode | lowercase | convertToSpaces: "-"
       }}
     </tr>
     <tr>
       Description:
       {{
-        this.product.description
+        product.description
       }}
     </tr>
     <tr>
       Availability:
       {{
-        this.product.releaseDate
+        product.releaseDate
       }}
     </tr>
     <tr>
       Price:
       {{
-        this.product.price | currency: "USD":"symbol":"1.2-2"
+        product.price | currency: "USD":"symbol":"1.2-2"
       }}
     </tr>
     <tr>
       5 Star Rating:
-      <pm-star [rating]="this.product.starRating"></pm-star>
+      <pm-star [rating]="product.starRating"></pm-star>
     </tr>
     <img
-      [src]="this.product.imageUrl"
+      [src]="product.imageUrl"
       [title]="product.productName"
       [style.width.px]="imageWidth"
       [style.margin.px]="imageMargin"
