@@ -12,6 +12,8 @@ export class ProductListComponent implements OnInit {
   imageMargin: number = 2;
   showImage: boolean = false;
   errorMessage: string;
+  filteredProducts: IProduct[];
+  products: IProduct[] = [];
 
   _listFilter: string;
 
@@ -24,10 +26,6 @@ export class ProductListComponent implements OnInit {
       ? this.performFilter(this.listFilter)
       : this.products;
   }
-
-  filteredProducts: IProduct[];
-
-  products: IProduct[] = [];
 
   constructor(private productService: ProductService) {}
 
